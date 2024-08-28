@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>LeSun Portfolio index</title>
+</head>
+<style>
+    body {
+        background-color: rgb(45, 39, 49);
+        color: white;
+    }
+    .brand {
+        font-family: "Democratic processes demo",Arial, Helvetica, sans-serif;
+        margin: auto;
+        width: fit-content;
+        overflow: hidden;
+    }
+    .header {
+        font-size: 10vw;
+    }
+    
+    @media(max-width:2000px) {
+        .brand {
+            height: 350px;
+        }
+    }
+    @media(max-width:1200px) {
+        .brand {
+            height: 300px;
+        }
+        body {
+            padding-top: 10vh;
+        }
+    }
+    @media(max-width:800px) {
+        .brand {
+            height: 200px;
+        }
+        body {
+            padding-top: 20vh;
+        }
+    }
+    @media(max-width:600px) {
+        .brand {
+            height: 150px;
+        }
+        body {
+            padding-top: 30vh;
+        }
+    }
+    @media(max-width:500px) {
+        .brand {
+            height: 100px;
+        }
+        body {
+            padding-top: 40vh;
+        }
+    }
+    .scrollUp {
+        animation: scrollUp 1.5s forwards ease;
+    }
+    @keyframes scrollUp {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-200%);
+        }
+    }
+    .scrollDown {
+        animation: scrollDown 1.5s forwards ease;
+    }
+    @keyframes scrollDown {
+        0% {
+            transform: translateY(-200%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .greets {
+        height: fit-content;
+        width: fit-content;
+        margin: auto;
+    }
+    .smallText {
+        font-size: 2vw;
+        font-family:"Giphurs SC Light",Arial, Helvetica, sans-serif;
+    }
+</style>
+<body>
+    <div class="greets container">
+        <p class="smallText">This is my Portfolio, my name is</p>
+    </div>
+    <div class="brand container">
+        <p class="header" id="name">Faniry Ranaivoson</p>
+        <p class="header" id="pseudo">Le Sun</p>
+    </div>
+    <div class="greets container">
+        <p class="smallText">I'm an artist</p>
+    </div>
+</body>
+<script>
+    const name = document.getElementById('name');
+    const pseudo = document.getElementById('pseudo');
+    const body = document.getElementsByTagName('body');
+    name.addEventListener('mouseover', function() {
+        setTimeout(() => {
+            name.classList.add('scrollUp');
+            pseudo.classList.add('scrollUp');
+            name.classList.remove('scrollDown');
+            pseudo.classList.remove('scrollDown');
+            body[0].style.backgroundColor = 'white';
+            body[0].style.color = 'black';
+        }, 500);
+    });
+    pseudo.addEventListener('mouseout', function() {
+        setTimeout(() => {
+            name.classList.add('scrollDown');
+            pseudo.classList.add('scrollDown');
+            name.classList.remove('scrollUp');
+            pseudo.classList.remove('scrollUp');
+            body[0].style.backgroundColor = 'rgb(45, 39, 49)';
+            body[0].style.color = 'white';
+        }, 500);
+    });
+</script>
+</html>
